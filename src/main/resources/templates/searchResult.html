@@ -37,7 +37,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
       <a th:href="@{/}" class="navbar-brand">
-        <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>HomePathy</h1>
+        <h3 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>MataJi-Swami Narayani Vibronic Healing System</h3>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -45,6 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
           <a th:href="@{/}" class="nav-item nav-link ">Home</a>
+          <a th:href="@{/search}" class="nav-item nav-link active">Search Patient</a>
           <a th:href="@{/addPatient}" class="nav-item nav-link ">Add Patient</a>
           <!-- <a href="price.html" class="nav-item nav-link">Medicine</a>-->
         </div>
@@ -94,10 +95,10 @@
             </div>
             <div class="d-flex align-items-center">
               <a class="btn btn-outline-dark rounded-pill py-3 px-5"
-                 th:href="@{/viewprescription/{id}(id=${patient.id})}">View Previous Prescriptions</a>
+                 th:href="@{/viewprescription/{id}(id=${patient.id})}">MataJi's View Previous Prescriptions</a>
             </div>
             <div class="d-flex align-items-center ">
-              <small class="ms-3"> <i class="far fa-eye text-primary me-1"></i></small> <small th:text=" ${patient.time}"></small>
+              <small class="ms-3"> <i class="far fa-eye text-primary me-1"></i></small> <span th:text=" ${patient.date}"></span>
             </div>
           </div>
           <div class="p-4 border-top">

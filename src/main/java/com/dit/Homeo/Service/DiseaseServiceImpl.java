@@ -5,7 +5,9 @@ import com.dit.Homeo.Repository.DiseaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Service
 public class DiseaseServiceImpl implements DiseaseService{
@@ -14,6 +16,9 @@ public class DiseaseServiceImpl implements DiseaseService{
     @Override
     public Disease save(Disease disease) {
         disease.setTime(LocalDateTime.now());
+        SimpleDateFormat dateFormat= new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        disease.setDate(dateFormat.format(date));
         diseaseRepository.save(disease);
         return disease;
     }

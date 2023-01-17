@@ -17,6 +17,7 @@ public class Disease {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String dis;
+    String prescription;
     List<String> medicine;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
@@ -24,6 +25,23 @@ public class Disease {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime time;
 
+    String date;
+
+    public String getPrescription() {
+        return prescription;
+    }
+
+    public void setPrescription(String prescription) {
+        this.prescription = prescription;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public List<String> getMedicine() {
         return medicine;

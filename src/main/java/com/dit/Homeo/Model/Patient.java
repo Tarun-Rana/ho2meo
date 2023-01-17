@@ -30,8 +30,18 @@ public class Patient {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime time;
+
+    String date;
     @OneToMany
     private List<Disease> diseaseList;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public List<Disease> getDiseaseList() {
         return diseaseList;

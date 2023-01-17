@@ -39,8 +39,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
                 <a th:href="@{/}" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2">
-                    </i>HomePathy</h1>
+                    <h3 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>MataJi-Swami Narayani Vibronic Healing System</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -48,6 +47,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a th:href="@{/}" class="nav-item nav-link ">Home</a>
+                        <a th:href="@{/search}" class="nav-item nav-link">Search Patient</a>
                         <a th:href="@{/addPatient}" class="nav-item nav-link ">Add Patient</a>
                         <!--<a href="price.html" class="nav-item nav-link">Medicine</a>-->
                     </div>
@@ -72,12 +72,12 @@
                         </div>
                         <div class="col-12 col-sm-6">
                             <a class="btn btn-outline-dark py-3 px-5 ml-2 mb-1"
-                               th:href="@{/addPrescription/{id}(id=${patient.id})}">Add Prescription</a>
+                               th:href="@{/addPrescription/{id}(id=${patient.id})}">Changes in medication</a>
                         </div>
                     </div>
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <span class="form-control bg-grey border-0" disabled  th:text="${patient.name}"style="height: 55px;"></span>
+                                <span class="form-control bg-grey border-0 bold font-weight-bold" disabled  th:text="${patient.name}"style="bold height: 55px;"></span>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <p type="text" class="form-control bg-grey border-0"
@@ -100,9 +100,10 @@
                         <div class="bg-light rounded overflow-hidden">
                             <div class="p-4 border-top">
                                 <div class="col-12">
-                                    <small><a class="h3 d-block mb-3" th:text="Prescription+' ' +${idx.index+1}+' ' + ${medicine.time}"></a></small>
-                                    <textarea class="form-control bg-grey border-0"  rows="1"
-                                              th:text="${medicine.dis}"></textarea>
+                                    <small><a class="h3 d-block mb-3" th:text="Prescription+' - ' +${idx.index+1}+' - ' + ${medicine.date}"></a></small>
+                                    <h5 class=" d-block mb-3" th:text="${medicine.dis}"></h5>
+                                    <textarea class="form-control bg-grey border-0"  rows="3"
+                                              th:text="${medicine.prescription}"></textarea>
                                 </div>
                             </div>
                         </div>

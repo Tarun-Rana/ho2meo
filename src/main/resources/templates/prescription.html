@@ -39,8 +39,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
                 <a th:href="@{/}" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2">
-                    </i>HomePathy</h1>
+                    <h3 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>MataJi-Swami Narayani Vibronic Healing System</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -48,6 +47,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a th:href="@{/}" class="nav-item nav-link ">Home</a>
+                        <a th:href="@{/search}" class="nav-item nav-link">Search Patient</a>
                         <a th:href="@{/addPatient}" class="nav-item nav-link ">Add Patient</a>
                         <!--<a href="price.html" class="nav-item nav-link">Medicine</a>-->
                     </div>
@@ -66,7 +66,7 @@
                 <!-- Comment Form Start -->
                 <div class="bg-light rounded p-5">
                     <h4 class="d-inline-block text-primary text-uppercase  border-white ">
-                        Enter Prescription</h4>
+                        Vibronic Prescription</h4>
                     <form action="#" th:action="@{/savePrescription/{id}(id=${patient.id})}" th:object="${prescription}" method="post">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
@@ -83,8 +83,12 @@
                                 <span type="text" class="form-control bg-grey border-0" disabled  th:text="${patient.contactInformation}" style="height: 55px;"/>
                             </div>
                             <div class="col-12">
-                                <textarea type="text" th:field="*{dis}" id="dis" class="form-control bg-white border-0" rows="3"
-                                          placeholder="Prescription"></textarea>
+                                <input type="text" th:field="*{dis}" id="dis" class="form-control bg-white border-0"
+                                          placeholder="Symptoms">
+                            </div>
+                            <div class="col-12">
+                                <textarea type="text" th:field="*{prescription}" id="prescription" class="form-control bg-white border-0" rows="3"
+                                          placeholder="Vibronic Prescription"></textarea>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">
